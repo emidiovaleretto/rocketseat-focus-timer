@@ -15,19 +15,21 @@
 
 <body>
   <div class="dark">
-    <button class="lightbulb"></button>
+    <button class="lightbulb" title="Click to turn off the light" aria-pressed="false"
+      aria-describedby="lightbulb-button" aria-label="lightbulb icon"></button>
   </div>
   <div class="container">
     <main>
       <h1 class="timer">25:00</h1>
       <div class="controls">
-        <button class="play"></button>
-        <button class="stopwatch"></button>
+        <button class="play" aria-pressed="false" aria-describedby="play-button" aria-label="play icon"></button>
+        <button class="stopwatch" aria-pressed="false" aria-describedby="stopwatch-button"
+          aria-label="stopwatch icon"></button>
       </div>
     </main>
   </div>
   <div class="volume-control">
-    <button class="volume"></button>
+    <button class="volume" aria-pressed="false" aria-describedby="volume-button" aria-label="volume icon"></button>
   </div>
 </body>
 
