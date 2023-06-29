@@ -85,7 +85,7 @@ button {
   background: url("../img/stop.svg");
 }
 
-.dark,
+.toggle-icon,
 .volume-control {
   text-align: right;
   margin-right: 4rem;
@@ -97,4 +97,9 @@ button {
 
 .mute {
   background: url("../img/mute.svg");
+}
+
+.txt-red {
+  color: #ff0000;
+  transition: color 4s ease-in-out;
 }
