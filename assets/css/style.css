@@ -20,7 +20,7 @@ body {
 .container {
   display: grid;
   place-content: center;
-  height: 90vh;
+  height: 80vh;
 }
 
 main {
@@ -31,7 +31,9 @@ main {
 }
 
 main h1 {
-  font-size: 8rem;
+  font-size: 9rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
 }
 
 .controls {
@@ -48,6 +50,7 @@ button {
   cursor: pointer;
 }
 
+.lightbulb,
 .play,
 .pause,
 .stopwatch,
@@ -56,6 +59,11 @@ button {
 .mute {
   width: 6.4rem;
   height: 6.4rem;
+}
+
+.lightbulb {
+  margin-top: 3.2rem;
+  background: url("../img/lightbulb.svg") no-repeat center;
 }
 
 .play {
@@ -74,6 +82,7 @@ button {
   background: url("../img/stop.svg");
 }
 
+.dark,
 .volume-control {
   text-align: right;
   margin-right: 4rem;
