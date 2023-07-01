@@ -26,8 +26,8 @@ const Button = {
     play.classList.add("play")
   },
   stopwatch() {
-    stopwatch.classList.add("stopwatch")
-    stopwatch.classList.remove("stop")
+    stopwatch.classList.add("stop")
+    stopwatch.classList.remove("stopwatch")
   },
   volume() {
     volume.classList.add("volume")

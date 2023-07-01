@@ -25,6 +25,8 @@ play.onclick = () => {
 
 stopwatch.onclick = () => {
   if (!stopwatch.classList.contains("stop")) {
+    minutes = prompt("Enter the number of minutes")
+    updateTimerDisplay(minutes, 0)
     Button.stopwatch()
   } else {
     Button.stop()
@@ -50,8 +52,8 @@ const updateTimerDisplay = (minutes, seconds) => {
 }
 
 const timerCountdown = () => {
-  minutes = 10
-  seconds = 60
+  minutes = Number(document.querySelector(".minutes").innerHTML)
+  seconds = Number(document.querySelector(".seconds").innerHTML)
 
   countdown = setInterval(() => {
     if (seconds <= 0) {
@@ -61,7 +63,7 @@ const timerCountdown = () => {
       seconds--
     }
 
-    updateTimerDisplay(minutes - 1, seconds)
+    updateTimerDisplay(minutes, seconds)
 
     if (minutes === 0 && seconds <= 10) {
       timer.classList.add("txt-red")
@@ -70,7 +72,7 @@ const timerCountdown = () => {
     if (minutes === 0 && seconds === 0) {
       clearInterval(countdown)
       Button.play()
-      Button.stopwatch()
+      Button.stop()
       timer.classList.remove("txt-red")
     }
   }, 1000)
