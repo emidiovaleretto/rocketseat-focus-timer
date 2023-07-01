@@ -7,6 +7,9 @@ export const stopwatch = document.querySelector(".stopwatch")
 export const volume = document.querySelector(".volume")
 const timer = document.querySelector(".timer")
 
+let minutesOnDisplay = document.querySelector(".minutes")
+let secondsOnDisplay = document.querySelector(".seconds")
+
 let minutes, seconds, countdown
 
 lightbulb.onclick = () => {
@@ -25,13 +28,14 @@ play.onclick = () => {
 
 stopwatch.onclick = () => {
   if (!stopwatch.classList.contains("stop")) {
-    minutes = prompt("Enter the number of minutes")
-    updateTimerDisplay(minutes, 0)
+    minutes = Number(minutesOnDisplay.innerHTML)
+    let newMinutes = prompt("Enter the number of minutes")
+    updateTimerDisplay(newMinutes ? newMinutes : minutes, 0)
     Button.stopwatch()
   } else {
     Button.stop()
     clearInterval(countdown)
-    updateTimerDisplay(minutes, 0)
+    updateTimerDisplay(minutes + 1, 0)
   }
 }
 
@@ -44,9 +48,6 @@ volume.onclick = () => {
 }
 
 const updateTimerDisplay = (minutes, seconds) => {
-  let minutesOnDisplay = document.querySelector(".minutes")
-  let secondsOnDisplay = document.querySelector(".seconds")
-
   minutesOnDisplay.innerHTML = String(minutes).padStart(2, "0")
   secondsOnDisplay.innerHTML = String(seconds).padStart(2, "0")
 }
