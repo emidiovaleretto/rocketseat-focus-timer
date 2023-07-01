@@ -28,6 +28,8 @@ stopwatch.onclick = () => {
     Button.stopwatch()
   } else {
     Button.stop()
+    clearInterval(countdown)
+    updateTimerDisplay(minutes, 0)
   }
 }
 
@@ -59,7 +61,7 @@ const timerCountdown = () => {
       seconds--
     }
 
-    updateTimerDisplay(minutes, seconds)
+    updateTimerDisplay(minutes - 1, seconds)
 
     if (minutes === 0 && seconds <= 10) {
       timer.classList.add("txt-red")
