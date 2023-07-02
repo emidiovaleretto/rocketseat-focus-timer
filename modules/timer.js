@@ -1,5 +1,5 @@
 import { newMinutes } from "../../assets/js/script.js"
-import { Button } from "../../modules/controls.js"
+import { Button } from "./controls.js"
 
 const timer = document.querySelector(".timer")
 
