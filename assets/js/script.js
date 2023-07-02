@@ -31,7 +31,12 @@ play.onclick = () => {
 
 stopwatch.onclick = () => {
   if (!stopwatch.classList.contains("stop")) {
-    newMinutes = prompt("Enter the number of minutes")
+    newMinutes = Number(prompt("Enter the number of minutes"))
+
+    if (newMinutes <= 0) {
+      alert("Please enter a number greater than 0")
+      return
+    }
     timer.updateTimerDisplay(newMinutes ? newMinutes : minutes, 0)
     Button.stopwatch()
   } else {
