@@ -1,4 +1,5 @@
 import { newMinutes } from "../../assets/js/script.js"
+import { Button } from "../../modules/controls.js"
 
 const timer = document.querySelector(".timer")
 
@@ -38,10 +39,10 @@ export function Timer({ minutesOnDisplay, secondsOnDisplay, countdown }) {
       }
 
       if (minutes === 0 && seconds === 0) {
-        clearInterval(countdown)
         Button.play()
         Button.stop()
         timer.classList.remove("txt-red")
+        resetTimerDisplay()
       }
     }, 1000)
   }
