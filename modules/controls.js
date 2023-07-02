@@ -1,10 +1,6 @@
-import {
-  play,
-  stopwatch,
-  volume,
-  body,
-  lightbulb,
-} from "../assets/js/script.js"
+import { play, stopwatch, volume, lightbulb } from "../assets/js/script.js"
+
+const body = document.querySelector("body")
 
 const Button = {
   play() {
@@ -50,4 +46,4 @@ const Button = {
   },
 }
 
-export default Button
+export { Button }
