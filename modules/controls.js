@@ -1,5 +1,6 @@
-import { play, stopwatch, volume, lightbulb } from "../assets/js/script.js"
+import { Elements } from "./elements.js"
 
+const { lightbulb, play, stopwatch, volume } = Elements()
 const body = document.querySelector("body")
 
 const Button = {
@@ -41,7 +42,7 @@ const Button = {
       "title",
       lightbulb.getAttribute("title") === "Click to turn off the light"
         ? "Click to turn on the light"
-        : "Click to turn off the light"
+        : "Click to turn off the light",
     )
   },
 }

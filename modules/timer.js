@@ -1,7 +1,9 @@
-import { newMinutes } from "../../assets/js/script.js"
+import { audio } from "./events.js"
 import { Button } from "./controls.js"
+import { Elements } from "./elements.js"
 
 const timer = document.querySelector(".timer")
+const { newMinutes } = Elements()
 
 let minutes, seconds
 
@@ -39,8 +41,10 @@ export function Timer({ minutesOnDisplay, secondsOnDisplay, countdown }) {
       }
 
       if (minutes === 0 && seconds === 0) {
-        Button.play()
+        audio.backgroundMusic.pause()
+        audio.kitchenTimer.play()
         Button.stop()
+        Button.mute()
         timer.classList.remove("txt-red")
         resetTimerDisplay()
       }

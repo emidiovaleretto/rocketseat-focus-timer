@@ -1,54 +1,5 @@
-import { Button } from "../../modules/controls.js"
-import { Timer } from "../../modules/timer.js"
+import { Elements } from "../../modules/elements.js"
+import { Events } from "../../modules/events.js"
 
-export const lightbulb = document.querySelector(".lightbulb")
-export const play = document.querySelector(".play")
-export const stopwatch = document.querySelector(".stopwatch")
-export const volume = document.querySelector(".volume")
-
-export let newMinutes
-
-let minutesOnDisplay = document.querySelector(".minutes")
-let secondsOnDisplay = document.querySelector(".seconds")
-
-let countdown
-
-const timer = Timer({ minutesOnDisplay, secondsOnDisplay, countdown })
-
-lightbulb.onclick = () => {
-  Button.turnOffLight()
-}
-
-play.onclick = () => {
-  if (!play.classList.contains("pause")) {
-    Button.play()
-    timer.timerCountdown()
-  } else {
-    Button.pause()
-    timer.pauseTimerDisplay()
-  }
-}
-
-stopwatch.onclick = () => {
-  if (!stopwatch.classList.contains("stop")) {
-    newMinutes = Number(prompt("Enter the number of minutes"))
-
-    if (newMinutes <= 0) {
-      alert("Please enter a number greater than 0")
-      return
-    }
-    timer.updateTimerDisplay(newMinutes ? newMinutes : minutes, 0)
-    Button.stopwatch()
-  } else {
-    Button.stop()
-    timer.resetTimerDisplay()
-  }
-}
-
-volume.onclick = () => {
-  if (!volume.classList.contains("volume")) {
-    Button.volume()
-  } else {
-    Button.mute()
-  }
-}
+const { lightbulb, play, stopwatch, volume } = Elements()
+Events({ play, stopwatch, volume, lightbulb })
