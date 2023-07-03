@@ -7,8 +7,7 @@ export function Elements() {
   let minutesOnDisplay = document.querySelector(".minutes")
   let secondsOnDisplay = document.querySelector(".seconds")
 
-  let newMinutes
-  let countdown
+  let countdown, minutes, seconds
 
   return {
     lightbulb,
@@ -17,7 +16,8 @@ export function Elements() {
     volume,
     minutesOnDisplay,
     secondsOnDisplay,
-    newMinutes,
     countdown,
+    minutes,
+    seconds,
   }
 }

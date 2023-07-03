@@ -1,11 +1,10 @@
 import { audio } from "./events.js"
 import { Button } from "./controls.js"
 import { Elements } from "./elements.js"
+import { newMinutes } from "./events.js"
 
 const timer = document.querySelector(".timer")
-const { newMinutes } = Elements()
-
-let minutes, seconds
+let { minutes, seconds } = Elements()
 
 export function Timer({ minutesOnDisplay, secondsOnDisplay, countdown }) {
   function updateTimerDisplay(minutes, seconds) {

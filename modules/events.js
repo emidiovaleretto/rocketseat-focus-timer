@@ -1,9 +1,11 @@
 import { Elements } from "./elements.js"
-import { Button } from "../../modules/controls.js"
-import { Timer } from "../../modules/timer.js"
-import { playSound } from "../../modules/sounds.js"
+import { Button } from "./controls.js"
+import { Timer } from "./timer.js"
+import { playSound } from "./sounds.js"
 
-let { newMinutes, minutesOnDisplay, secondsOnDisplay, countdown } = Elements()
+let { minutesOnDisplay, secondsOnDisplay, countdown, minutes } = Elements()
+
+export let newMinutes
 
 export const audio = playSound()
 
